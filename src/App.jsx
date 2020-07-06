@@ -7,6 +7,9 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import { AuthContextProvider } from "./context/AuthContext";
+import Admin from "./components/Admin";
+import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute2 from "./components/PrivateRoute2";
 
 const App = () => {
   return (
@@ -14,9 +17,11 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Home />
-          </Route>
+          </Route> */}
+
+          <Route exact path="/" component={Home} />
 
           <Route path="/about">
             <About />
@@ -29,6 +34,8 @@ const App = () => {
           <Route path="/blog">
             <Blog />
           </Route>
+
+          <PrivateRoute2 component={Admin} path="/admin" />
         </Switch>
       </BrowserRouter>
     </AuthContextProvider>

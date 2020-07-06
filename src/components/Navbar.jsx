@@ -21,6 +21,9 @@ const Navbar = () => {
         <NavLink activeClassName="selectedPage" className="link" to="/blog">
           Blog
         </NavLink>
+        <NavLink activeClassName="selectedPage" className="link" to="/admin">
+          Admin
+        </NavLink>
         <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
           {isLoggedIn ? "Logout" : "Login"}
         </button>
